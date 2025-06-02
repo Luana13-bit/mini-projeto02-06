@@ -1,24 +1,39 @@
-
-.container-peças{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+.container-form {
+  padding: 20px;
 }
-.cards-peça
-{
-  background: rgb(255, 254, 254);
+
+.container-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 300px;
+}
+
+.cards-peças {
+  background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 10px;
   width: 200px;
   text-align: center;
-
   margin-bottom: 20px;
 }
 
-.cards-peça img {
+.cards-peças img {
   width: 100%;
   height: auto;
   border-radius: 4px;
 }
 
+#container-peças {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+body {
+  background-color: #de7a7a; 
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
