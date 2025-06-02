@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apresentação - Loja de Roupas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Produtos da Loja</h1>
+  <div id="cards-container" class="cards-container"></div>
+
+  <a href="index.html" class="link">Voltar para Dashboard</a>
+
+  <script>
+    const produtos = JSON.parse(localStorage.getItem('produtos')) || [];
+    const container = document.getElementById('cards-container');
+
+    if (produtos.length === 0) {
+      container.innerHTML = "<p>Nenhum produto cadastrado.</p>";
+    } else {
+      produtos.forEach(produto => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${produto.imagem}" alt="${produto.nome}" />
+          <h3>${produto.nome}</h3>
+          <p>${produto.descricao}</p>
+          <p><strong>R$ ${parseFloat(produto.preco).toFixed(2).replace('.', ',')}</strong></p>
+        `;
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
